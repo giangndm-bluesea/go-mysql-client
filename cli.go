@@ -185,9 +185,11 @@ type Results struct {
 
 func (r *Results) String() string {
 	buf := bytes.NewBufferString("")
-	table := tablewriter.NewWriter(buf)
-	table.SetHeader(r.Columns)
-	table.AppendBulk(r.Rows)
-	table.Render()
+	if r != nil {
+		table := tablewriter.NewWriter(buf)
+		table.SetHeader(r.Columns)
+		table.AppendBulk(r.Rows)
+		table.Render()
+	}
 	return buf.String()
 }
