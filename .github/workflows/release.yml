@@ -19,7 +19,7 @@ jobs:
         uses: thatisuday/go-cross-build@v1
         with:
             platforms: 'linux/amd64, darwin/amd64, darwin/arm64, windows/amd64'
-            package: 'go-mysql-client'
-            name: 'program'
+            package: 'cmd/gomysql/main.go'
+            name: 'go-mysql-client'
             compress: 'false'
             dest: 'dist'
